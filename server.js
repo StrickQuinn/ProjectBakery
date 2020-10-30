@@ -57,8 +57,9 @@ app.get('/' , (req, res) => {
     res.send('Hello World!');
 });
 
+//route to GET NEW bakery item page
 app.get('/bakery/new', (req, res) => {
-    res.send('new page works')
+    res.render('new.ejs')
     console.log('new page works')
 });
 
