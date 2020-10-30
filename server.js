@@ -53,8 +53,11 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-    res.send('Hello World!');
+
+//INDEX route to GET the bakery home page
+app.get('/bakery' , (req, res) => {
+    res.render('index.ejs')
+    console.log('index page works')
 });
 
 //route to GET NEW bakery item page
