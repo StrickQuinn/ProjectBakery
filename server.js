@@ -19,7 +19,10 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ 'bakery_db';
 
 // Connect to Mongo
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
+mongoose.connect(MONGODB_URI ,  { 
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -37,7 +40,9 @@ db.on('open' , ()=>{});
 app.use(express.static('public'));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
+app.use(express.urlencoded(
+    { extended: true }
+));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 
 //use method override
@@ -50,6 +55,11 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //localhost:3000
 app.get('/' , (req, res) => {
     res.send('Hello World!');
+});
+
+app.get('/bakery/new', (req, res) => {
+    res.send('new page works')
+    console.log('new page works')
 });
 
 //___________________
