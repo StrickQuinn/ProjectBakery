@@ -48,6 +48,22 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+//___________________
+//Data
+//___________________
+//temporary placement of data
+const bakeryItem = {
+    category:  "Bread",
+    catImg:  "https://i.imgur.com/TUmV3wH.jpg?1",
+    subcategory: "White",
+    subcatImg: "https://i.imgur.com/TUmV3wH.jpg?1",
+    type: "White Sourdough",
+    typeImg: "https://i.imgur.com/TUmV3wH.jpg?1",
+    description: "The dough needs to be prepared at least 2 days before baking.",
+    ingredients: "sourdough, distilled water",
+    size: "24 oz",
+    price: "$5"
+}
 
 //___________________
 // Routes
@@ -56,8 +72,18 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //INDEX route to GET the bakery home page
 app.get('/bakery' , (req, res) => {
-    res.render('index.ejs')
+    res.render('index.ejs', {
+        allBakeryItems: bakeryItem
+    });
     console.log('index page works')
+});
+
+//SUBCAT route to GET the subcategory page
+app.get('/bakery/subcat', (req, res) => {
+    res.render('subcat.ejs', {
+        subcatItems: bakeryItem
+    });
+    console.log('subcat page works')
 });
 
 //route to GET NEW bakery item page

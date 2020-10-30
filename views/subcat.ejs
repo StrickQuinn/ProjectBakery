@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakery Home Page</title>
+    <title>Bakery Subcategory</title>
 </head>
 <body>
-    <h1>Bakery Home</h1>
     <nav>
         <a href="/bakery/new">Add New Product</a>
+        <br />
+        <a href="/bakery">Home</a>
     </nav>
-    <br />
-    <a href="/bakery/subcat"><%= allBakeryItems.category %></a>
+    <h1><%= subcatItems.category %></h1>
+    <h2><%= subcatItems.subcategory %></h2>
 </body>
 </html>
