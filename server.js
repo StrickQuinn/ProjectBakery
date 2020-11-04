@@ -96,6 +96,12 @@ app.get('/bakery/:id', (req, res) => {
     });
 });
 
+//delete item
+app.delete('/bakery/:id', (req, res) => {
+    Bakery.findByIdAndRemove(req.params.id, (error, foundBakery) => {
+        res.redirect('/bakery');
+    });
+});
 
 //___________________
 //Listener

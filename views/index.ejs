@@ -13,7 +13,10 @@
     <br />
     <% for (let i = 0; i < bakeries.length; i++) { %>
         <a href="/bakery/<%= bakeries[i].id %>"><%= bakeries[i].type %></a>
-        <br />
+        <form action="/bakery/<%= bakeries[i].id; %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE"/>
+        </form>
     <% } %>
+    
 </body>
 </html>
