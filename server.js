@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 //Database
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ 'bakery_db';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bakery_db';
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI ,  { 
@@ -31,6 +31,11 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 // open the connection to mongo
 db.on('open' , ()=>{});
+
+//___________________
+//Model
+//___________________
+const Bakery = require('./models/bakery.js')
 
 //___________________
 //Middleware
@@ -48,42 +53,23 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-//___________________
-//Data
-//___________________
-//temporary placement of data
-const bakeryItem = {
-    category:  "Bread",
-    catImg:  "https://i.imgur.com/TUmV3wH.jpg?1",
-    subcategory: "White",
-    subcatImg: "https://i.imgur.com/TUmV3wH.jpg?1",
-    type: "White Sourdough",
-    typeImg: "https://i.imgur.com/TUmV3wH.jpg?1",
-    description: "The dough needs to be prepared at least 2 days before baking.",
-    ingredients: "sourdough, distilled water",
-    size: "24 oz",
-    price: "$5"
-}
-
+//data
+const bakery = require('./models/bakery.js')
 //___________________
 // Routes
 //___________________
 //localhost:3000
 
-//INDEX route to GET the bakery home page
-app.get('/bakery' , (req, res) => {
-    res.render('index.ejs', {
-        allBakeryItems: bakeryItem
-    });
-    console.log('index page works')
-});
+//test
 
-//SUBCAT route to GET the subcategory page
-app.get('/bakery/subcat', (req, res) => {
-    res.render('subcat.ejs', {
-        subcatItems: bakeryItem
+//index
+app.get('/bakery', (req, res) => {
+    Bakery.find(req.body, (error, allBakeries) => {
+        res.render('index.ejs', {
+            bakeries: allBakeries
+        });
     });
-    console.log('subcat page works')
+    console.log(req.body)
 });
 
 //route to GET NEW bakery item page
@@ -91,6 +77,25 @@ app.get('/bakery/new', (req, res) => {
     res.render('new.ejs')
     console.log('new page works')
 });
+
+//Create new bakery Item
+app.post('/bakery', (req, res) => {
+    Bakery.create(req.body, (error, createdBakery) => {
+        res.redirect('/bakery')
+    });
+    console.log(req.body.id)
+});
+
+
+//get id -- show
+app.get('/bakery/:id', (req, res) => {
+    Bakery.findById(req.params.id, (error, foundBakery) => {
+        res.render('show.ejs', {
+            bakeries: foundBakery
+        })
+    });
+});
+
 
 //___________________
 //Listener

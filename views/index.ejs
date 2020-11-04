@@ -6,11 +6,14 @@
     <title>Bakery Home Page</title>
 </head>
 <body>
-    <h1>Bakery Home</h1>
+    <h1>Inventory</h1>
     <nav>
         <a href="/bakery/new">Add New Product</a>
     </nav>
     <br />
-    <a href="/bakery/subcat"><%= allBakeryItems.category %></a>
+    <% for (let i = 0; i < bakeries.length; i++) { %>
+        <a href="/bakery/<%= bakeries[i].id %>"><%= bakeries[i].type %></a>
+        <br />
+    <% } %>
 </body>
 </html>

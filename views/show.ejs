@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Route</title>
+</head>
+<body>
+    <nav>
+        <a href="/bakery">Home</a>
+        <a href="/bakery/new">Add New Product</a>
+    </nav>
+    <h1><%= bakeries.type %></h1>
+    <img src="<%= bakeries.typeImg %>" height="200px">
+    <br />
+    <h3>Category</h3>
+    <p><%= bakeries.category %></p>
+    <h3>Subcategory</h3>
+    <p><%= bakeries.subcat %></p>
+    <h3>Description</h3>
+    <p><%= bakeries.description %></p>
+    <h3>Ingredients</h3>
+    <p><%= bakeries.ingredients %></p>
+    <p><strong><%= bakeries.pricingType %> : $<%= bakeries.price %></strong></p>
+</body>
+</html>

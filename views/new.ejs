@@ -10,5 +10,26 @@
     <nav>
         <a href="/bakery">Home</a>
     </nav>
+    <form action="/bakery" method="post">
+        Category: <input type="text" name="category" /><br/>
+        Category Image Link: <input type="text" name="catImg" /><br/>
+        Subcategory: <input type="text" name="subcat" /><br/>
+        Subcategory Image Link: <input type="text" name="subcatImg" /><br/>
+        Type: <input type="text" name="type" /><br/>
+        Type Image Link: <input type="text" name="typeImg" /><br/>
+        Description: <input type="text" name="description" /><br/>
+        Ingredients: <input type="text" name="ingredients" /><br/>
+        <table>
+            <tr>
+                <th>Size/Flavor</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="pricingType" /></td>
+                <td><input type="text" name="price" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="add item" />
+    </form>
 </body>
 </html>
