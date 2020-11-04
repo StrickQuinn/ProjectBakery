@@ -21,7 +21,8 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bakery
 // Connect to Mongo
 mongoose.connect(MONGODB_URI ,  { 
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 });
 
 // Error / success
@@ -47,35 +48,31 @@ app.use(express.static('public'));
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded(
     { extended: true }
-));// extended: false - does not allow nested objects in query strings
-app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
+));
+app.use(express.json());// middlewares that parses JSON
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-//data
+//data comes from bakery Schema
 const bakery = require('./models/bakery.js')
 //___________________
 // Routes
 //___________________
 //localhost:3000
 
-//test
-
-//index
+//index -- homepage
 app.get('/bakery', (req, res) => {
     Bakery.find(req.body, (error, allBakeries) => {
         res.render('index.ejs', {
             bakeries: allBakeries
         });
     });
-    console.log(req.body)
 });
 
 //route to GET NEW bakery item page
 app.get('/bakery/new', (req, res) => {
     res.render('new.ejs')
-    console.log('new page works')
 });
 
 //Create new bakery Item
@@ -86,6 +83,14 @@ app.post('/bakery', (req, res) => {
     console.log(req.body.id)
 });
 
+//edit the bakery item
+app.get('/bakery/:id/edit', (req, res) => {
+    Bakery.findById(req.params.id, (error, foundBakery) => {
+        res.render('edit.ejs', {
+            bakeries: foundBakery
+        })
+    })
+});
 
 //get id -- show
 app.get('/bakery/:id', (req, res) => {
