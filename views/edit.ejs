@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1><%= bakeries.type %></h1>
-    <form action="" method="post">
+    <form action="/bakery/<%= bakeries.id %>?_method=PUT" method="post">
         Type: <input type="text" name="type" id="type" value="<%= bakeries.type %>" /><br/>
         Type Image Link: <input type="text" name="typeImg" id="typeImg" value="<%= bakeries.typeImg %>" /><br/>
         Category: <input type="text" name="category" id="category" value="<%= bakeries.category %>" /><br/>
@@ -16,7 +16,7 @@
         Ingredients: <input type="text" name="ingredients" id="ingredients" value="ingredients" /><br/>
         PricingType: <input type="text" name="pricingType" id="pricingType" value="<%= bakeries.pricingType %>" /><br />
         Price: $<input type="text" name="price" id="price" value="<%= bakeries.price %>" /><br />
-        <input type="submit" value="add item" />
+        <input type="submit" value="edit item" />
     </form>
 </body>
 </html>

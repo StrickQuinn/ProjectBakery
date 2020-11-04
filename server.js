@@ -83,13 +83,20 @@ app.post('/bakery', (req, res) => {
     console.log(req.body.id)
 });
 
-//edit the bakery item
+//get edit item page
 app.get('/bakery/:id/edit', (req, res) => {
     Bakery.findById(req.params.id, (error, foundBakery) => {
         res.render('edit.ejs', {
             bakeries: foundBakery
         })
     })
+});
+
+//put updated info on item details page
+app.put('/bakery/:id', (req, res) => {
+    Bakery.findByIdAndUpdate(req.params.id, req.body, { new: true }, (error, updatedBakery) => {
+        res.redirect('/bakery')
+    });
 });
 
 //get id -- show
