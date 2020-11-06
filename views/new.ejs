@@ -12,14 +12,29 @@
         <a href="/bakery">Home</a>
     </nav>
     <form action="/bakery" method="post">
-        Type: <input type="text" name="type" /><br/>
-        Type Image Link: <input type="text" name="typeImg" /><br/>
-        Category: <input type="text" name="category" /><br/>
-        Subcategory: <input type="text" name="subcat" /><br/>
-        Description: <input type="text" name="description" /><br/>
-        PricingType: <input type="text" name="pricingType" /><br />
-        Price: $<input type="text" name="price" /><br />
-        <input type="submit" value="add item" />
+        <!--Type-->
+        <label for="type">Type</label><br />
+        <input type="text" name="type" /><br/>
+        <!--Type Image-->
+        <label for="typeImg">Type Image Link</label><br />
+        <input type="text" name="typeImg" /><br/>
+        <!--Category-->
+        <label for="category">Category</label><br />
+        <input type="text" name="category" /><br/>
+        <!--Subcategory-->
+        <label for="subcat">Subcategory</label><br />
+        <input type="text" name="subcat" /><br/>
+        <!--Description-->
+        <label for="description">Description</label><br />
+        <input type="text" name="description" /><br/>
+        <!--Pricing Type-->
+        <label for="pricingType">Pricing Type</label><br />
+        <input type="text" name="pricingType" /><br />
+        <!--Price-->
+        <label for="price">Price($)</label><br />
+        <input type="text" name="price" /><br />
+        <!--add item to db-->
+        <input type="submit" value="Add" />
     </form>
 </body>
 </html>
