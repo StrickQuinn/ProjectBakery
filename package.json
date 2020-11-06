@@ -15,7 +15,9 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.10.11"
+    "mongoose": "^5.10.11",
+    "normalize": "^0.3.1",
+    "skeleton": "^0.1.2"
   },
   "description": "",
   "repository": {

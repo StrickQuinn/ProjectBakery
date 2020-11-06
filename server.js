@@ -70,6 +70,13 @@ app.get('/bakery', (req, res) => {
     });
 });
 
+//get category page
+app.get('/bakery', (req, res) => {
+    Bakery.find(req.body, (error, foundCategory) => {
+        res.send('')
+    });
+});
+
 //route to GET NEW bakery item page
 app.get('/bakery/new', (req, res) => {
     res.render('new.ejs')

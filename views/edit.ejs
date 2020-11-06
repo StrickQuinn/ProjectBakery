@@ -6,17 +6,34 @@
     <title>Edit</title>
 </head>
 <body>
+    <!--route to go home-->
+    <nav>
+        <a href="/bakery">Home</a>
+    </nav>
     <h1><%= bakeries.type %></h1>
     <form action="/bakery/<%= bakeries.id %>?_method=PUT" method="post">
-        Type: <input type="text" name="type" id="type" value="<%= bakeries.type %>" /><br/>
-        Type Image Link: <input type="text" name="typeImg" id="typeImg" value="<%= bakeries.typeImg %>" /><br/>
-        Category: <input type="text" name="category" id="category" value="<%= bakeries.category %>" /><br/>
-        Subcategory: <input type="text" name="subcat" id="subcat" value="<%= bakeries.subcat %>" /><br/>
-        Description: <input type="text" name="description" id= "description" value="description" /><br/>
-        Ingredients: <input type="text" name="ingredients" id="ingredients" value="ingredients" /><br/>
-        PricingType: <input type="text" name="pricingType" id="pricingType" value="<%= bakeries.pricingType %>" /><br />
-        Price: $<input type="text" name="price" id="price" value="<%= bakeries.price %>" /><br />
-        <input type="submit" value="edit item" />
+        <!--Type-->
+        <label for="type">Type</label><br />
+        <input type="text" name="type" id="type" value="<%= bakeries.type %>" /><br />
+        <!--Image of Type-->
+        <label for="typeImg">Type Image Link</label><br />
+        <input type="text" name="typeImg" id="typeImg" value="<%= bakeries.typeImg %>" /><br />
+        <!--Category-->
+        <label for="category">Category</label><br />
+        <input type="text" name="category" id="category" value="<%= bakeries.category %>" /><br />
+        <!--Subcategory-->
+        <label for="subcat">Subcategory</label><br />
+        <input type="text" name="subcat" id="subcat" value="<%= bakeries.subcat %>" /><br />
+        <!--Description-->
+        <label for="description">Description</label><br />
+        <input type="text" name="description" id= "description" value="description" /><br />
+        <!--Pricing Type-->
+        <input type="text" name="pricingType" id="pricingType" value="<%= bakeries.pricingType %>" /><br />
+        <!--Price-->
+        <label for="price">Price($)</label><br />
+        <input type="text" name="price" id="price" value="<%= bakeries.price %>" /><br />
+        <!--Edit button that updates item info-->
+        <input type="submit" value="Edit" />
     </form>
 </body>
 </html>
