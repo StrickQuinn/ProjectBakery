@@ -11,13 +11,16 @@
     <!--Search box -- Ian Schoonover, https://www.youtube.com/watch?v=9_lKMTXVk64 -->
     <header>
         <p>
+            <!--Take to page to add new item-->
             <form action="/bakery" method="get">
-
-                    <a href="/bakery/new">Add New Product</a>
-                <div>
-                    <input type="search" placeholder="Bakery Item Search" />
-                    <input type="submit" value="Search">
-                </div>
+                <a href="/bakery/new">Add New Product</a><br />
+            </form>
+            <!--take to page to post search results-->
+            <form action="/search" method="POST">
+                <!--Place keyword to help find item-->
+                <input type="search" placeholder="Bakery Item Search" />
+                <!--submit the value to bakery home page-->
+                <input type="submit" value="Search">
             </form>
         </p>
     </header>
@@ -25,9 +28,12 @@
     <div class="container">
         <h1>Inventory</h1>
         <br />
+        <!--show the items in your inventory-->
         <% for (let i = 0; i < bakeries.length; i++) { %>
             <a href="/bakery/<%= bakeries[i].id %>"><%= bakeries[i].type %></a><br />
+            <!--Have a way to edit the item-->
             <a href="/bakery/<%= bakeries[i].id %>/edit">Edit</a>
+            <!--Have a way to delete item-->
             <form action="/bakery/<%= bakeries[i].id; %>?_method=DELETE" method="POST">
                 <input type="submit" value="DELETE"/>
             </form>

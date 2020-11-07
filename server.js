@@ -70,7 +70,7 @@ app.get('/bakery', (req, res) => {
     });    
 });
 
-//route to get search ejs
+//route to get search.ejs
 app.get('/search', (req, res) => {
     res.send('search works')
 });
@@ -80,12 +80,18 @@ app.get('/bakery/new', (req, res) => {
     res.render('new.ejs')
 });
 
+
 //Create new bakery Item
 app.post('/bakery', (req, res) => {
     Bakery.create(req.body, (error, createdBakery) => {
         res.redirect('/bakery')
     });
     console.log(req.body.id)
+});
+
+//return search results on search.ejs
+app.post('/search', (req,res) => {
+    res.send('hi there')
 });
 
 //get edit item page
