@@ -90,9 +90,31 @@ app.post('/bakery', (req, res) => {
 });
 
 //return search results on search.ejs
+//Sources: https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/
+//Sources: https://www.youtube.com/watch?v=kZ77X67GUfk
 app.post('/search', (req,res) => {
-    res.send('hi there')
-});
+    Bakery.find({
+        '$text': {
+            '$search': req.body.query
+        }
+    }, {
+        type: 1,
+        category: 1,
+        subcat: 1,
+        description: 1,
+        textScore: {
+            $meta: 'textScore'
+        }
+    }, {
+        sort: {
+            textScore: {
+                $meta: 'textScore'
+            }
+        }
+    }, (error, searchBakery) => {
+        res.send('search result will show here')
+    })
+})
 
 //get edit item page
 app.get('/bakery/:id/edit', (req, res) => {
