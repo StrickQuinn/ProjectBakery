@@ -11,7 +11,9 @@
     <!--Search box -- Ian Schoonover, https://www.youtube.com/watch?v=9_lKMTXVk64 -->
     <header>
         <p>
-            <form>
+            <form action="/bakery" method="get">
+
+                    <a href="/bakery/new">Add New Product</a>
                 <div>
                     <input type="search" placeholder="Bakery Item Search" />
                     <input type="submit" value="Search">
@@ -22,9 +24,6 @@
     </div>
     <div class="container">
         <h1>Inventory</h1>
-        <nav>
-            <a href="/bakery/new">Add New Product</a>
-        </nav>
         <br />
         <% for (let i = 0; i < bakeries.length; i++) { %>
             <a href="/bakery/<%= bakeries[i].id %>"><%= bakeries[i].type %></a><br />

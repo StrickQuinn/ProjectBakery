@@ -63,18 +63,16 @@ const bakery = require('./models/bakery.js')
 
 //index -- homepage
 app.get('/bakery', (req, res) => {
-    Bakery.find(req.body, (error, allBakeries) => {
+    Bakery.find({}, (error, allBakeries) => {
         res.render('index.ejs', {
             bakeries: allBakeries
         });
-    });
+    });    
 });
 
-//get category page
-app.get('/bakery', (req, res) => {
-    Bakery.find(req.body, (error, foundCategory) => {
-        res.send('')
-    });
+//route to get search ejs
+app.get('/search', (req, res) => {
+    res.send('search works')
 });
 
 //route to GET NEW bakery item page
