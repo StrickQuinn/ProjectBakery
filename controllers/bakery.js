@@ -40,7 +40,7 @@ router.get('/new', (req, res) => {
 //Create new bakery Item
 router.post('/', (req, res) => {
     Bakery.create(req.body, (error, createdBakery) => {
-        res.redirect('/bakery')
+        res.redirect('/')
     });
 });
 
@@ -75,7 +75,7 @@ router.get('/:id/edit', (req, res) => {
 //put updated info on item details page
 router.put('/:id', (req, res) => {
     Bakery.findByIdAndUpdate(req.params.id, req.body, { new: true }, (error, updatedBakery) => {
-        res.redirect('/bakery')
+        res.redirect('/')
     });
 });
 
@@ -91,7 +91,7 @@ router.get('/:id', (req, res) => {
 //delete item
 router.delete('/:id', (req, res) => {
     Bakery.findByIdAndRemove(req.params.id, (error, foundBakery) => {
-        res.redirect('/bakery');
+        res.redirect('/');
     });
 });
 
