@@ -17,12 +17,15 @@
     <img src="<%= bakeries.typeImg %>" height="200px">
     <br />
     <h3>Category</h3>
-    <p><%= bakeries.category %></p>
+        <p><%= bakeries.category %></p>
     <h3>Subcategory</h3>
-    <p><%= bakeries.subcat %></p>
+        <p><%= bakeries.subcat %></p>
     <h3>Description</h3>
-    <p><%= bakeries.description %></p>
-    <p><strong><%= bakeries.pricingType %> : $<%= bakeries.price %></strong></p>
+        <p><%= bakeries.description %></p>
+    <h3>Pricing Type</h3>
+        <p><%= bakeries.pricingType %></p>
+        <h3>Shop Price ($)</h3>
+        <p><%= bakeries.shopPrice %></p>
     <nav>
         <a href="/<%= bakeries.id %>/edit">Edit</a>
     </nav>

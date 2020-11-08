@@ -9,48 +9,58 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>Bernie's Bakery Inventory</h1>
+    <h1>Bernie's Bakery Pricing Guide</h1>
 
     <!--Search box -- Ian Schoonover, https://www.youtube.com/watch?v=9_lKMTXVk64 -->
     <header>
-        <p>
-            <!--Take to page to add new item-->
-            <form action="/new" method="get">
-                <input type="submit" value="Add New Item" />
-            </form>
-            <!--take to page to post search results-->
-            <form action="/search" method="POST">
-                <!--Search types of bakery items-->
-                <label for="type">Type: </label>
-                <input type="search" placeholder="Bakery Item Search" name="query" id="type" />
-                <!--submit the value to bakery home page-->
-                <input type="submit" value="Search" >
-            </form>
-        </p>
+        <nav>
+            <ul>
+                <li>
+                    <!--Take to page to add new item-->
+                    <form action="/new" method="get">
+                        <input type="submit" value="Add New Item" />
+                    </form>
+                </li>
+                <li>
+                    <!--take to page to post search results-->
+                    <form action="/search" method="POST">
+                        <!--Search types of bakery items-->
+                        <label for="type">Find Item: </label>
+                        <input type="search" placeholder="Bakery Item Search" name="query" id="type" />
+                        <!--submit the value to bakery home page-->
+                        <input type="submit" value="Search" >
+                    </form>
+                </li>
+            </ul>
+        </nav>
+
     </header>
     </div>
     <div class="container">
-        <h2>Inventory</h2>
+        <h2>Bakery Items</h2>
         <br />
         <!--show the items in your inventory-->
         <% for (let i = 0; i < bakeries.length; i++) { %>
-            <a href="/<%= bakeries[i].id %>"><%= bakeries[i].type %></a><br />
-            <nav>
-                <ul>
-                    <!--Have a way to edit the item-->
-                    <li>
-                        <form action="/<%= bakeries[i].id %>/edit" method="get">
-                            <input type="submit" value="Edit" />
-                        </form>
-                    </li>
-                    <!--Have a way to delete item-->
-                    <li>
-                        <form action="/<%= bakeries[i].id; %>?_method=DELETE" method="POST">
-                            <input type="submit" value="Delete"/>
-                        </form>
-                    </li>
-                </ul>
-            </nav>
+            <div class="container">
+                <h3><a href="/<%= bakeries[i].id %>"><%= bakeries[i].type %></a></h3><br />
+                <nav>
+                    <ul>
+                        <!--Have a way to edit the item-->
+                        <li>
+                            <form action="/<%= bakeries[i].id %>/edit" method="get">
+                                <input type="submit" value="Edit" />
+                            </form>
+                        </li>
+                        <!--Have a way to delete item-->
+                        <li>
+                            <form action="/<%= bakeries[i].id; %>?_method=DELETE" method="POST">
+                                <input type="submit" value="Delete"/>
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <br />
         <% } %>
 </div>
 <script
