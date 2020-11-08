@@ -1,4 +1,17 @@
+/* See elements more easily */
 * {
     background: red;
     border: 1px solid black;
+}
+
+/* remove bullets, margin, and padding from list items */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Display Edit & Delete button in a row */
+li {
+    display: inline-block;
 }
