@@ -6,6 +6,7 @@
 * {
     text-align: center;
     margin: 1% auto;
+    font-family: 'Montserrat';
 }
 
 /* remove bullets, margin, and padding from list items */
@@ -19,12 +20,12 @@ ul {
 li {
     display: inline-block;
     padding: 1% 15%;
+    font-size: 90.5%;
 }
 
 /* Display containers inline */
 .container {
     display: inline-block;
-    border: 1px solid black;
 }
 
 /* Give tables a border */ 
@@ -41,9 +42,13 @@ input {
 /* Index Styling */
 /*_______________*/
 
-/* 'Bernie's Bakery Pricing Guide' */
+/* 'Bernie's Bakery Pricing Guide'; 'Bakery Items' */
 h1 {
     font-family: 'Permanent Marker';
+}
+
+h2, h4 {
+    margin: 0;
 }
 
 /* nav: Add + Search */
@@ -54,4 +59,11 @@ h1 {
 /*Limit width to control how many items can be seen on a row */
 #list {
     max-width: 960px;
+    padding: 0.5% 0;
+}
+
+/* Give individual bakery item containers margins */
+#bakeryItem {
+    margin: 1%;
+    border: 1px solid black;
 }

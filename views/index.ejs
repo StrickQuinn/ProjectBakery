@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakery Home Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Permanent+Marker&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/skeleton.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -42,16 +43,16 @@
     <div class="container" id="list">
         <!--show the items in your inventory-->
         <% for (let i = 0; i < bakeries.length; i++) { %>
-            <div class="container">
+            <div class="container" id="bakeryItem">
                 <h3><a href="/<%= bakeries[i].id %>"><%= bakeries[i].type %></a></h3>
                 <div class="container">
-                    <img src="<%= bakeries[i].typeImg %>" width="300">
+                    <img src="<%= bakeries[i].typeImg %>" width="280">
                 </div>
                 <h4>Pricing</h4>
                 <table>
                     <tr>
-                        <th>Shop</th>
-                        <th>Market</th>
+                        <th> Shop </th>
+                        <th> Market </th>
                         <th>Shipment</th>
                     </tr>
                     <tr>
