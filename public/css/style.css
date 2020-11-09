@@ -150,4 +150,6 @@ input[type="search"] {
 
 .details {
     padding: 2% 18%;
+    background: #fdf5f4;
+    color: #381A38;
 }
