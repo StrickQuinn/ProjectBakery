@@ -10,6 +10,19 @@ const router = express.Router()
 const Bakery = require('../models/bakery.js')
 
 //___________________
+//RESTful routes
+//___________________
+//Index     GET     '/bakery'       1/7
+//Show      GET     '/bakery/:id'   2/7
+//New       GET     '/bakery/new'   3/7
+//Create    POST    '/bakery'       4/7
+//Edit      GET     '/bakery/:id'   5/7
+//Update    PUT     '/bakery/:id'   6/7
+//Delete    DELETE  '/bakery/:id'   7/7
+
+
+
+//___________________
 // Routes
 //___________________
 
