@@ -21,7 +21,6 @@ const Bakery = require('../models/bakery.js')
 //Delete    DELETE  '/bakery/:id'   7/7
 
 
-
 //___________________
 // Routes
 //___________________
