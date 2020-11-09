@@ -1,6 +1,6 @@
 /* See elements more easily */
 * {
-    border: 1px solid black;
+    text-align: center;
 }
 
 /* remove bullets, margin, and padding from list items */
@@ -13,4 +13,9 @@ ul {
 /* Display Edit & Delete button in a row */
 li {
     display: inline-block;
+}
+
+.container {
+    display: inline-block;
+    border: 1px solid black;
 }

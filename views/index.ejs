@@ -36,13 +36,30 @@
 
     </header>
     </div>
+
+    <h2>Bakery Items</h2>
+
     <div class="container">
-        <h2>Bakery Items</h2>
-        <br />
         <!--show the items in your inventory-->
         <% for (let i = 0; i < bakeries.length; i++) { %>
             <div class="container">
-                <h3><a href="/<%= bakeries[i].id %>"><%= bakeries[i].type %></a></h3><br />
+                <h3><a href="/<%= bakeries[i].id %>"><%= bakeries[i].type %></a></h3>
+                <div class="container">
+                    <img src="<%= bakeries[i].typeImg %>" width="300">
+                </div>
+                <h4>Pricing</h4>
+                <table>
+                    <tr>
+                        <th>Shop</th>
+                        <th>Market</th>
+                        <th>Shipment</th>
+                    </tr>
+                    <tr>
+                        <td>$<%= bakeries[i].shopPrice %></td>
+                        <td>$<%= bakeries[i].marketPrice %></td>
+                        <td>$<%= bakeries[i].shipmentPrice %></td>
+                    </tr>
+                </table>
                 <nav>
                     <ul>
                         <!--Have a way to edit the item-->
@@ -60,7 +77,6 @@
                     </ul>
                 </nav>
             </div>
-            <br />
         <% } %>
 </div>
 <script
