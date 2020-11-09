@@ -8,7 +8,9 @@ const bakedSchema = new mongoose.Schema ({
     description: { type: String, required: true },
     ingredients: { type: String },
     pricingType: { type: String, required: true },
-    shopPrice: {type: Number, required: true},
+    shopPrice: { type: Number, required: true },
+    marketPrice: { type: Number, required: true },
+    shipmentPrice: {type: Number, required: true }
 });
 
 const Bakery = mongoose.model('Bakery', bakedSchema);
