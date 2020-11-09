@@ -1,6 +1,15 @@
 /* See elements more easily */
 * {
     text-align: center;
+    margin: 1% auto;
+}
+
+h1 {
+    font-family: 'Permanent Marker';
+}
+
+#bar-1-square {
+    font-size: 125%;
 }
 
 /* remove bullets, margin, and padding from list items */
@@ -13,9 +22,25 @@ ul {
 /* Display Edit & Delete button in a row */
 li {
     display: inline-block;
+    padding: 1% 15%;
 }
 
+
+/* Display containers inline */
 .container {
     display: inline-block;
     border: 1px solid black;
+}
+
+table {
+    border: 1px solid black;
+}
+
+input {
+    text-align: left;
+}
+
+/*Limit width to control how many items can be seen on a row */
+#list {
+    max-width: 960px;
 }

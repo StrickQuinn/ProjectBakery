@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakery Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/skeleton.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -18,28 +19,27 @@
                 <li>
                     <!--Take to page to add new item-->
                     <form action="/new" method="get">
-                        <input type="submit" value="Add New Item" />
+                        <input type="submit" value="Add New Item" id="bar-1-square" />
                     </form>
                 </li>
                 <li>
                     <!--take to page to post search results-->
-                    <form action="/search" method="POST">
+                    <form action="/search" method="POST" >
                         <!--Search types of bakery items-->
-                        <label for="type">Find Item: </label>
-                        <input type="search" placeholder="Bakery Item Search" name="query" id="type" />
+                        <label for="type" id="bar-1-square" >Find Item: </label>
+                        <input type="search" placeholder="Bakery Item Search" name="query" id="bar-1-square" />
                         <!--submit the value to bakery home page-->
-                        <input type="submit" value="Search" >
+                        <input type="submit" value="Search" id="bar-1-square" >
                     </form>
                 </li>
             </ul>
         </nav>
-
     </header>
     </div>
 
     <h2>Bakery Items</h2>
 
-    <div class="container">
+    <div class="container" id="list">
         <!--show the items in your inventory-->
         <% for (let i = 0; i < bakeries.length; i++) { %>
             <div class="container">
