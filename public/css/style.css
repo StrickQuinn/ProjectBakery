@@ -19,13 +19,14 @@ ul {
 /* Display Edit & Delete button in a row */
 li {
     display: inline-block;
-    padding: 1% 15%;
+    padding: 1% 14%;
     font-size: 90.5%;
 }
 
 /* Display containers inline */
 .container {
     display: inline-block;
+    margin: 0 auto;
 }
 
 /* Give tables a border */ 
@@ -73,9 +74,9 @@ h2, h4 {
     padding: 1%;
 }
 
-/*_______________*/
-/* New Styling */
-/*_______________*/
+/*____________________*/
+/* New + Edit Styling */
+/*____________________*/
 
 /* Define the addItem container display */
 #theItem {
@@ -85,6 +86,19 @@ h2, h4 {
     padding: 1% 2%;
 }
 
+/* align the text in the column to the right */
 .col {
     text-align: right;
+}
+
+/*______________*/
+/* Show Styling */
+/*______________*/
+
+#itemDetails {
+    display: inline-block;
+}
+
+table {
+    padding: 2% 18%;
 }

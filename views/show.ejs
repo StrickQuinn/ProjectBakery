@@ -10,29 +10,64 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <!--Item name-->
+    <h1><%= bakeries.type %></h1>
+    <h3>(Details)</h3>
+    <!--A way to get home-->
     <nav>
         <a href="/">Home</a>
-        <a href="//new">Add New Product</a>
     </nav>
-    <h1><%= bakeries.type %></h1>
-    <img src="<%= bakeries.typeImg %>" height="200px">
-    <br />
-    <h3>Category</h3>
-        <p><%= bakeries.category %></p>
-    <h3>Subcategory</h3>
-        <p><%= bakeries.subcat %></p>
-    <h3>Description</h3>
-        <p><%= bakeries.description %></p>
-    <h3>Pricing Type</h3>
-        <p><%= bakeries.pricingType %></p>
-    <h3>Shop Price ($)</h3>
-        <p><%= bakeries.shopPrice %></p>
-    <h3>Market Price ($)</h3>
-        <p><%= bakeries.marketPrice %></p>
-    <h3>Shipment Price ($)</h3>
-        <p><%= bakeries.shipmentPrice %></p>
+    <!--Container with item details-->
+<div class="container" class="bakeryItem">
+        <img src="<%= bakeries.typeImg %>" width="300">
+    <table>
+        <!--Category-->
+        <tr>
+            <td>Category: </td>
+            <td><%=bakeries.category%></td>
+        </tr>
+        <!--Subcategory-->
+        <tr>
+            <td>Subcategory: </td>
+            <td><%= bakeries.subcat %></td>
+        </tr>
+        <!--Pricing Type-->
+        <tr>
+            <td>Pricing Type: </td>
+            <td><%= bakeries.pricingType %></td>
+        </tr>
+        <!--Shop Price-->
+        <tr>
+            <td>Shop Price: </td>
+            <td>$<%= bakeries.shopPrice %></td>
+        </tr>
+        <!--Market Shop-->
+        <tr>
+            <td>Market Price: </td>
+            <td>$<%= bakeries.marketPrice %></td>
+        </tr>
+        <!--Shipment Price-->
+        <tr>
+            <td>Shipment Price: </td>
+            <td>$<%= bakeries.shipmentPrice %></td>
+        </tr>
+    </table>
     <nav>
-        <a href="/<%= bakeries.id %>/edit">Edit</a>
+        <ul>
+            <!--Have a way to edit the item-->
+            <li>
+                <form action="/<%= bakeries.id %>/edit" method="get">
+                    <input type="submit" value="Edit" />
+                </form>
+            </li>
+            <!--Have a way to delete item-->
+            <li>
+                <form action="/<%= bakeries.id; %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete"/>
+                </form>
+            </li>
+        </ul>
     </nav>
+</div>
 </body>
 </html>
