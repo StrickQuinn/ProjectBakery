@@ -38,6 +38,10 @@ input {
     text-align: left;
 }
 
+label {
+    text-align: right;
+}
+
 /*_______________*/
 /* Index Styling */
 /*_______________*/
@@ -53,7 +57,7 @@ h2, h4 {
 
 /* nav: Add + Search */
 #bar-1-square {
-    font-size: 125%;
+    font-size: 120%;
 }
 
 /*Limit width to control how many items can be seen on a row */
@@ -66,4 +70,20 @@ h2, h4 {
 #bakeryItem {
     margin: 1%;
     border: 1px solid black;
+}
+
+/*_______________*/
+/* New Styling */
+/*_______________*/
+
+/* Define the addItem container display */
+#addItem {
+    display: inline-block;
+    width: 480px;
+    border: 1px solid black;
+    padding: 1% 2%;
+}
+
+.col {
+    text-align: right;
 }
