@@ -1,15 +1,11 @@
+/*_______________*/
+/* All Styling */
+/*_______________*/
+
 /* See elements more easily */
 * {
     text-align: center;
     margin: 1% auto;
-}
-
-h1 {
-    font-family: 'Permanent Marker';
-}
-
-#bar-1-square {
-    font-size: 125%;
 }
 
 /* remove bullets, margin, and padding from list items */
@@ -25,19 +21,34 @@ li {
     padding: 1% 15%;
 }
 
-
 /* Display containers inline */
 .container {
     display: inline-block;
     border: 1px solid black;
 }
 
+/* Give tables a border */ 
 table {
     border: 1px solid black;
 }
 
+/* Align input text to the left */
 input {
     text-align: left;
+}
+
+/*_______________*/
+/* Index Styling */
+/*_______________*/
+
+/* 'Bernie's Bakery Pricing Guide' */
+h1 {
+    font-family: 'Permanent Marker';
+}
+
+/* nav: Add + Search */
+#bar-1-square {
+    font-size: 125%;
 }
 
 /*Limit width to control how many items can be seen on a row */
