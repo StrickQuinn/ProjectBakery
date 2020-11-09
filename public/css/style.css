@@ -9,6 +9,9 @@
     font-family: 'Montserrat';
 }
 
+body {
+    background: #e7f3e4;
+}
 /* remove bullets, margin, and padding from list items */
 ul {
     list-style-type: none;
@@ -32,6 +35,11 @@ li {
 /* Give tables a border */ 
 table {
     border: 1px solid black;
+    background: #fdf5f4;
+}
+
+th, td {
+    background: #fdf5f4;
 }
 
 /* Align input text to the left */
@@ -39,8 +47,27 @@ input {
     text-align: left;
 }
 
+.btn {
+    background: rgb(146, 196, 238);
+    cursor: pointer;
+}
+
 label {
     text-align: right;
+}
+
+.green {
+    background: rgb(74, 119, 74);
+    color: #ecfee8;
+}
+
+.red {
+    background: #B53737;
+    color: #fdf5f4;
+}
+
+.orange {
+    background: #E57939;
 }
 
 /*_______________*/
@@ -50,15 +77,31 @@ label {
 /* 'Bernie's Bakery Pricing Guide'; 'Bakery Items' */
 h1 {
     font-family: 'Permanent Marker';
+    color: #625643;
 }
 
 h2, h4 {
     margin: 0;
 }
 
+h4 {
+    color: #ecfee8;
+}
+
+a {
+    color: #fdf5f4;
+}
+a:hover {
+    color: #d37063;
+}
+
 /* nav: Add + Search */
 #bar-1-square {
     font-size: 120%;
+}
+
+input[type="search"] {
+    background: white;
 }
 
 /*Limit width to control how many items can be seen on a row */
@@ -70,8 +113,8 @@ h2, h4 {
 /* Give individual bakery item containers margins */
 #bakeryItem {
     margin: 0.5%;
-    border: 1px solid black;
     padding: 1%;
+    background: #381A38;
 }
 
 /*____________________*/
@@ -84,11 +127,17 @@ h2, h4 {
     width: 480px;
     border: 1px solid black;
     padding: 1% 2%;
+    background: #381A38;
+    color: #fdf5f4;
 }
 
 /* align the text in the column to the right */
 .col {
     text-align: right;
+}
+
+.home {
+    color: #381A38
 }
 
 /*______________*/

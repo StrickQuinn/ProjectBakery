@@ -18,7 +18,7 @@
                 <li>
                     <!--Take to page to add new item-->
                     <form action="/new" method="get">
-                        <input type="submit" value="Add New Item" id="bar-1-square" />
+                        <input type="submit" class="orange btn" value="Add New Item" id="bar-1-square" />
                     </form>
                 </li>
                 <li>
@@ -28,7 +28,7 @@
                         <label for="type" id="bar-1-square" >Find Item: </label>
                         <input type="search" placeholder="Bakery Item Search" name="query" id="bar-1-square" />
                         <!--submit the value to bakery home page-->
-                        <input type="submit" value="Search" id="bar-1-square" >
+                        <input type="submit" value="Search" class="btn" id="bar-1-square" >
                     </form>
                 </li>
             </ul>
@@ -36,7 +36,7 @@
         </header>
     </div>
 
-    <h2>Bakery Items</h2>
+    <h2>- Bakery Items -</h2>
 
     <div class="container" id="list">
         <!--show the items in your inventory-->
@@ -64,13 +64,13 @@
                         <!--Have a way to edit the item-->
                         <li>
                             <form action="/<%= bakeries[i].id %>/edit" method="get">
-                                <input type="submit" value="Edit" />
+                                <input type="submit" value="Edit" class="green btn" />
                             </form>
                         </li>
                         <!--Have a way to delete item-->
                         <li>
                             <form action="/<%= bakeries[i].id; %>?_method=DELETE" method="POST">
-                                <input type="submit" value="Delete"/>
+                                <input type="submit" class="red btn" value="Delete"/>
                             </form>
                         </li>
                     </ul>
