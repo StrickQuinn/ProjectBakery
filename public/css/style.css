@@ -99,6 +99,6 @@ h2, h4 {
     display: inline-block;
 }
 
-table {
+.details {
     padding: 2% 18%;
 }
